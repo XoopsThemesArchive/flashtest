@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="keywords" content="<{$xoops_meta_keywords}>" />
+<meta name="description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="$Id: index.html,v 1.6 2004/10/29 19:52:37 mikhail Exp $ - XOOPS BRASIL - Licence: GNU" />
+<title><{$xoops_sitename}> - <{$xoops_pagetitle}></title>
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_themecss}>" />
+<script type="text/javascript" language="javascript">
+<!--
+<{$xoops_js}>
+//-->
+</script>
+</head>
+
+<body>
+
+<table cellspacing="0" id="top">
+	<tr><td class="slogan" colspan="2"><{$xoops_slogan}></td></tr>
+    <tr id="header">
+		<td id="headerlogo">
+<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" WIDTH="500" HEIGHT="110" id="logo" ALIGN="">
+<PARAM NAME=movie VALUE="<{$xoops_imageurl}>logo.swf"><PARAM NAME=quality VALUE=high><PARAM NAME=bgcolor VALUE=#FFFFFF><EMBED src="<{$xoops_imageurl}>logo.swf" quality=high bgcolor=#FFFFFF  WIDTH="500" HEIGHT="110" NAME="logo" ALIGN="" TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer"></EMBED></OBJECT>
+</td>
+
+	<td id="headerbanner">
+<a href="<{$xoops_url}>/modules/pafiledb/"><img src="<{$xoops_imageurl}>files.png"></a><br>
+<br><a href="<{$xoops_url}>/phpbb/"><img src="<{$xoops_imageurl}>forum.png"></a><br>
+<br><a href="<{$xoops_url}>/modules/xoopsheadline/"><img src="<{$xoops_imageurl}>news.png"></a>
+	</td>
+    </tr>
+
+    <tr>
+		<td class="slogan">
+<{if $xoops_isuser}>
+		Welcome, <a href="<{$xoops_url}>/user.php"><{$xoops_uname}></a> to <{$xoops_sitename}>
+<{else}>
+		<{$xoops_sitename}>に <a href="<{$xoops_url}>/register.php">新規登録</a>しませんか？
+<{/if}>
+		</td>
+
+		<td class="slogan">&nbsp;</td>
+	</tr>
+</table>
+
+
+<table cellspacing="0">
+	<tr>
+		<td id="leftcolumn">
+		<!-- Start left blocks loop -->
+<{foreach item=block from=$xoops_lblocks}>
+	<{include file="flashtest/theme_blockleft.html"}>
+<{/foreach}>
+		<!-- End left blocks loop -->
+		</td>
+		<td id="centercolumn">
+<!-- Display center blocks if any -->
+<{if $xoops_showcblock == 1}>
+			<table cellspacing="0">
+				<tr>
+					<td id="centerCcolumn" colspan="2">
+
+					<!-- Start center-center blocks loop -->
+<{foreach item=block from=$xoops_ccblocks}>
+	<{include file="flashtest/theme_blockcenter_c.html"}>
+<{/foreach}>
+					<!-- End center-center blocks loop -->
+
+            		</td>
+          		</tr>
+          		<tr>
+            		<td id="centerLcolumn">
+
+            		<!-- Start center-left blocks loop -->
+<{foreach item=block from=$xoops_clblocks}>
+	<{include file="flashtest/theme_blockcenter_l.html"}>
+<{/foreach}>
+		            <!-- End center-left blocks loop -->
+					</td>
+            		<td id="centerRcolumn">
+
+					<!-- Start center-right blocks loop -->
+<{foreach item=block from=$xoops_crblocks}>
+	<{include file="flashtest/theme_blockcenter_r.html"}>
+<{/foreach}>
+					<!-- End center-right blocks loop -->
+					</td>
+				</tr>
+			</table>
+<{/if}>
+<!-- End display center blocks -->
+			<div id="content"><{$xoops_contents}></div>
+		</td>
+<{if $xoops_showrblock == 1}>
+		<td id="rightcolumn">
+        <!-- Start right blocks loop -->
+<{foreach item=block from=$xoops_rblocks}>
+	<{include file="flashtest/theme_blockright.html"}>
+<{/foreach}>
+        <!-- End right blocks loop -->
+		</td>
+<{/if}>
+	</tr>
+</table>
+<div id="footer"><{$xoops_footer}></div>
+</body>
+</html>
